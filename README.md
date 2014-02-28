@@ -16,12 +16,23 @@ then we notify all users.
 - One applicaition is for front end using JSP and Servlet to register user for future product notifications.
 - Second is a complete backend application that uses same database and decides whether to send notification or not.
 
-Configuration
--------------
 
-- Install MySql. 
+Instructions to run the application
+-----------------------------------
+
+- set key, fromEmail and password in Constants.java
+- Install MySql. Create schema 'zappos' and import the given dumps. 
 - Add JavaMail api jar, json_simple jar to build path.
-- Create database with name 'zappos' and load the sql dumps.
+- Run Zappos for front end user registration for notification in Apache Tomcat.
+- Run main method from Main.java in APIAccess for backend notification process.
+
+Development Environment
+-----------------------
+
+- Kepler Eclipse IDE 
+- Java 6
+- Mac OS x 10.9 mavericks
+- Apache Tomcat 7
 
 Testing
 -------
