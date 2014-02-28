@@ -1,4 +1,10 @@
-
+package com.nitin.java.zappos;
+/*
+Set all constants here.
+Note: database name 'zappos' and table names 'notify_data' and 'product_data'
+are hard-coded in the program. Do remember to import the MySql dumps or create a
+schema with the help provided schemaDiagram.png 
+*/
 public class Constants {
 
 	private static String key="52ddafbe3ee659bad97fcce7c53592916a6bfd73";

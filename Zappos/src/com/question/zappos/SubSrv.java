@@ -14,6 +14,7 @@ import com.question.DabatabaseAccess.DAOEnternDetails;
 
 /**
  * Servlet implementation class SubSrv
+ * This servlet receives AJAX post request from index.jsp 
  */
 @WebServlet("/SubSrv")
 public class SubSrv extends HttpServlet {
@@ -49,6 +50,7 @@ public class SubSrv extends HttpServlet {
 		System.out.println(info);
 		DAOEnternDetails dao=new DAOEnternDetails();
 		try {
+			//this method is used to update the database with user information
 			dao.enterUserRequests(info);
 			pw.write("Registered for notification");
 		} catch (SQLException e) {

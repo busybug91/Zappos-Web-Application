@@ -1,5 +1,6 @@
 package com.question.DabatabaseAccess;
-
+/*A class to create and retrieve connection with database.
+ * */
 import java.sql.*;
 public class DatabaseAccess {
 
@@ -83,27 +84,4 @@ public class DatabaseAccess {
 			return false;
 		}
 	}
-	public void doQuery()
-	{
-		//just to see how things go with jdbc
-		try
-		{
-			pStmt=conn.prepareStatement("SELECT user_id, password FROM login_data");
-			resultSet=pStmt.executeQuery();
-			while(resultSet.next())
-			{
-				System.out.println(resultSet.getString("user_id"));
-				System.out.println(resultSet.getString("password"));
-
-			}	
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-		}
-	}
-
-
-
-
 }

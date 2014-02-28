@@ -1,4 +1,7 @@
-
+package com.nitin.java.zappos;
+/*
+ * Class to manage database connections
+ * */
 
 import java.sql.*;
 public class DatabaseAccess {

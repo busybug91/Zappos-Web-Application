@@ -1,4 +1,7 @@
-
+package com.nitin.java.zappos;
+/*This class has methods to communicate with zappos server and retrieve product information.
+ * once the information is retrieved it is returned as the string.
+*/
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -36,6 +39,8 @@ public class ZapposApi {
 	}
 	public String test() throws IOException
 	{
+		/*Method for test purposes only.
+		 */
 		String url=baseUrl+"[\"7943343\"]"+"&key="+Constants.getKey()+ "&includes=[\"styles\"]";
 		System.out.println(url);
 		URL obj= new URL(url);

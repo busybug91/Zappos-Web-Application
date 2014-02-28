@@ -1,8 +1,8 @@
 package com.question.zappos;
-
+/*A class to represent the elements of a user request submitted through index.jsp
+ */
 public class UserInfo {
-	
-	
+
 	String email;
 	String productID;
 	public String getEmail() {

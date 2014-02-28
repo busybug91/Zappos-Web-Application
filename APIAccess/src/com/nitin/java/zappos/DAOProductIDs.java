@@ -1,8 +1,12 @@
+package com.nitin.java.zappos;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-
+/*
+ * This class the has methods to get product IDs from the database
+ * and to find users eligible for notificaiton for the selected product
+ */
 
 public class DAOProductIDs {
 	Connection conn=null;
@@ -30,6 +34,11 @@ public class DAOProductIDs {
 	}
 	public HashSet<String> retreiveRelevantEmailIDs(Product product) throws SQLException
 	{
+		
+		/*Not all users for the selected product will be notified.
+		 * If the discount is greater than 20 but same as our previous search then
+		 * we notify only the new users else we notify all users about the new discount.
+		 * */
 		HashSet<String> users= new HashSet<String>();
 		DatabaseAccess access=new DatabaseAccess();
 		conn= access.getConn();
@@ -61,7 +70,8 @@ public class DAOProductIDs {
 		}
 		else 
 		{
-			System.out.println("No new discount have been found still I'll new users "+product.getProductID());
+			System.out.println("Discount for "+product.getProductID()+" is same as our pre"
+					+ "vious search.");
 			ps= conn.prepareStatement("SELECT * FROM zappos.notify_data WHERE (productID=?) AND (notify_status=?)");
 			ps.setString(1, product.getProductID());
 			ps.setInt(2, 0);

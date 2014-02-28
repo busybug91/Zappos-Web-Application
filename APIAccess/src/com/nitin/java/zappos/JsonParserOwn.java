@@ -1,3 +1,4 @@
+package com.nitin.java.zappos;
 import java.io.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,17 +13,13 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import com.google.gson.Gson;
-
+/*This class uses json_simple.jar to parse the received information from server.
+ * Parsing could be done with the help of gson parser also.
+ */
 
 public class JsonParserOwn {
 	Notification notifyInstance=null;
-
 	ArrayList<Product> relevantProducts=null;
-
-
-	//	String s="{\"product\":[{\"styles\":[],\"defaultProductUrl\":\"http:\/\/www.zappos.com\/product\/7564933\",\"defaultImageUrl\":null,\"productId\":\"7564933\",\"productName\":\"Aideen (Youth)\",\"brandId\":\"138\",\"brandName\":\"Sam & Libby Girls\"},{\"styles\":[{\"price\":\"$50.00\",\"productUrl\":\"http:\/\/www.zappos.com\/product\/8148211\/color\/144\",\"percentOff\":\"0%\",\"styleId\":\"2506127\",\"imageUrl\":\"http:\/\/www.zappos.com\/images\/z\/2\/5\/0\/6\/1\/2\/2506127-p-DETAILED.jpg\",\"color\":\"Black\/Red\",\"originalPrice\":\"$50.00\"}],\"defaultProductUrl\":\"http:\/\/www.zappos.com\/product\/8148211\",\"defaultImageUrl\":\"http:\/\/www.zappos.com\/images\/z\/2\/5\/0\/6\/1\/2\/2506127-p-DETAILED.jpg\",\"productId\":\"8148211\",\"productName\":\"Senix D Mid\",\"brandId\":\"444\",\"brandName\":\"etnies\"}],\"statusCode\":\"200\"}";
-	//	String s="{\"statusCode\": \"200\",\"product\": [{\"productId\": \"7151832\",\"brandId\": \"258\",\"styles\": [{\"styleId\": \"114116\",\"color\": \"Dark Blue\/Grey\",\"originalPrice\":\"$84.00\",\"price\": \"$84.00\"},{\"styleId\": \"114115\",\"color\": \"Grey\/Black\"}]}]}";
-
 	public JsonParserOwn()
 	{
 		relevantProducts=new ArrayList<Product>();
@@ -30,9 +27,6 @@ public class JsonParserOwn {
 	}
 	public void parse(String s) throws IOException, ParseException, SQLException, InterruptedException
 	{
-		//		String s=new ZapposApi().getProductInfo("7564933");
-		//		s= s.replaceAll("\"", "\"");
-		//		System.out.println(s);
 		relevantProducts.clear();
 		s=s.replaceAll("\\s+", "");
 		s=s.replaceAll("\\r\\n", "");
@@ -46,7 +40,6 @@ public class JsonParserOwn {
 		{
 			Object obj2=jObj.get("product");
 			JSONArray productArray=(JSONArray)obj2;
-			//		System.out.println(productArray);
 			int numOfProductsRetreived=productArray.size();
 			System.out.println("Number of products retreived "+numOfProductsRetreived);
 			for(int i=0;i<numOfProductsRetreived;i++)
@@ -59,7 +52,6 @@ public class JsonParserOwn {
 				String productName=productMap.get("productName").toString();
 				Object obj3= productMap.get("styles");
 				JSONArray stylesArray=(JSONArray) obj3;
-				//				System.out.println(stylesArray);
 				int numberOFStyles=stylesArray.size();
 				for(int j=0;j<numberOFStyles;j++)
 				{
@@ -69,7 +61,6 @@ public class JsonParserOwn {
 					{
 						String percentOff=particularStyle.get("percentOff").toString().replace("%", "");
 						int discountPercent=Integer.parseInt(percentOff);
-						//						System.out.println("Discount Percentage for productID: "+productID+" is "+discountPercent);
 						if(discountPercent>=20)
 						{
 							relevantProducts.add(new Product(productID,styleID,discountPercent, defaultProductUrl, productName, brandName));
@@ -82,6 +73,11 @@ public class JsonParserOwn {
 		System.out.println("Total relevant products in this iteration"+relevantProducts.size());
 		System.out.println(relevantProducts);
 		{
+			/*Once the products with discount percentage greater than 20 are identified
+			 * then the following code checks if discount is different from previous iteration
+			 * or not. If not then we notify only the new users else notify all users
+			 * about the new available discount
+			 * */
 			if(relevantProducts.size()>0)
 			{
 				for(Product product:relevantProducts)

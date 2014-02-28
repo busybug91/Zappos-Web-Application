@@ -1,3 +1,4 @@
+package com.nitin.java.zappos;
 
 public class Product {
 
@@ -7,8 +8,6 @@ public class Product {
 	private String productURL=Constants.getDefaultProductInfo();
 	private String productName=Constants.getDefaultProductInfo();
 	private String brandName=Constants.getDefaultProductInfo();
-
-
 	public Product(String productID, String styleID, int percentOff,
 			String productURL, String productName, String brandName) {
 		super();
