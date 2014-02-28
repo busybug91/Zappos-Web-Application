@@ -13,8 +13,8 @@ Assumptions
 another email to user as it might be considered spam. However, if discount percentage is different from previous noted value
 then we notify all users.
 - Two separate applications have been created that essentially use the same database.
-- One applicaition is for front end using JSP and Servlet to register user for future product notifications.
-- Second is a complete backend application that uses same database and decides whether to send notification or not.
+- One application (Zappos) is for front end using JSP and Servlet to register user for future product notifications.
+- Second application (APIAccess) is a complete backend application that uses same database and decides whether to send notification or not.
 
 
 Instructions to run the application
