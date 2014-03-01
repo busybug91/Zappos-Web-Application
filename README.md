@@ -1,7 +1,7 @@
 Zappos-Web-Application
 ======================
 
-Zappos summer 2014 java development intern code.
+Zappos summer 2014 Java Application Development College Intern code.
 ================================================
 
 Assumptions
