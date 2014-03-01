@@ -44,3 +44,12 @@ Testing
 - Product IDs from clearance items on zappos website were used to perform testing.
 - System worked well. Only known issue found was email limit achieved. Had to login into email account online and
 fill in the Captcha to enable emailing again.
+
+Screenshots
+-----------
+![Web Interface] (https://github.com/busybug91/Zappos-Web-Application/blob/master/screenshots/webInterface.png)
+![Output] (https://github.com/busybug91/Zappos-Web-Application/blob/master/screenshots/outputScreenshot.png)
+1[Sample Email](https://github.com/busybug91/Zappos-Web-Application/blob/master/screenshots/emailSnapshot.png)
+
+
+
