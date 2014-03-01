@@ -26,6 +26,10 @@ Instructions to run the application
 - Run Zappos for front end user registration for notification in Apache Tomcat.
 - Run main method from Main.java in APIAccess for backend notification process.
 
+Database Design
+---------------
+![alt tag](https://github.com/busybug91/Zappos-Web-Application/blob/master/schemaDiagram.png)
+
 Development Environment
 -----------------------
 
