@@ -47,9 +47,9 @@ fill in the Captcha to enable emailing again.
 
 Screenshots
 -----------
-![Web Interface] (https://github.com/busybug91/Zappos-Web-Application/blob/master/screenshots/webInterface.png)
-![Output] (https://github.com/busybug91/Zappos-Web-Application/blob/master/screenshots/outputScreenshot.png)
-1[Sample Email](https://github.com/busybug91/Zappos-Web-Application/blob/master/screenshots/emailSnapshot.png)
+![Web Interface](https://raw.github.com/busybug91/Zappos-Web-Application/master/screenshots/webInterface.png)
+![Output](https://raw.github.com/busybug91/Zappos-Web-Application/master/screenshots/outputScreenshot.png)
+1[Sample Email](hhttps://raw.github.com/busybug91/Zappos-Web-Application/master/screenshots/emailSnapshot.png)
 
 
 
