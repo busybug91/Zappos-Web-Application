@@ -54,7 +54,7 @@ Output
 ![Output](https://raw.github.com/busybug91/Zappos-Web-Application/master/screenshots/outputScreenshot.png)
 
 Sample email generated
-![Sample Email](hhttps://raw.github.com/busybug91/Zappos-Web-Application/master/screenshots/emailSnapshot.png)
+![Sample Email](https://raw.github.com/busybug91/Zappos-Web-Application/master/screenshots/emailSnapshot.png)
 
 
 
