@@ -20,7 +20,7 @@ then we notify all users.
 Instructions to run the application
 -----------------------------------
 
-- set key, fromEmail and password in Constants.java
+- Set key, fromEmail and password in Constants.java.
 - Install MySql. Create schema 'zappos' and import the given dumps. 
 - Add JavaMail api jar, json_simple jar to build path.
 - Run Zappos for front end user registration for notification in Apache Tomcat.
