@@ -28,7 +28,7 @@ Instructions to run the application
 
 Database Design
 ---------------
-![](https://raw.github.com/busybug91/Zappos-Web-Application/master/schemaDiagram.png)
+![Database Design] (https://raw.github.com/busybug91/Zappos-Web-Application/master/schemaDiagram.png)
 
 Development Environment
 -----------------------
